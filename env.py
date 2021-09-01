@@ -80,7 +80,7 @@ class QuadRotorEnv(gym.Env):
         print(self._state.attitude.roll)
         mpr = 20 * math.pi / 180
 
-    # small pitch, roll values, random yaw angle
+        # small pitch, roll values, random yaw angle
         
         self._state.attitude.roll=self.random_state.uniform(low=-mpr, high=mpr)
         self._state.attitude.pitch=self.random_state.uniform(low=-mpr, high=mpr)
