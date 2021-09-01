@@ -75,18 +75,7 @@ class QuadRotorEnv(gym.Env):
     def reset(self):
         #self._state = DynamicsState()
         self._reset_copter()
-    '''
-    def _reset_copter(self):
-        
-        self.randomize_angle(20)
-        self.randomize_angular_velocity(2.0)
-        self._state.attitude.yaw= self.random_state.uniform(low=-0.3, high=0.3)
-        self._state.position[2] = 1
-        # yaw control typically expects slower velocities
-        self._state.angular_velocity[2] *= 0.5
-      
-        return self._get_state()
-    '''
+
     def _reset_copter(self):
         print(self._state.attitude.roll)
         mpr = 20 * math.pi / 180
