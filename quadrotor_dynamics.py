@@ -42,10 +42,10 @@ def angular_momentum_body_frame(params, state):
     w = state.angular_velocity
     Kr = params.rotational_drag
 
-    gyro = state.net_rotor_speed * J * np.array([w[2], -w[1], 0])
+    #gyro = state.net_rotor_speed * J * np.array([w[2], -w[1], 0])
     drag = Kr * w
     Mp = torques(params, state)
-    B = Mp - drag + gyro - np.cross(w, I*w)
+    B = Mp - drag - np.cross(w, I*w)
 
     return B
 
