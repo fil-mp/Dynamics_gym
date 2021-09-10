@@ -62,7 +62,7 @@ def simulate_quadrotor(params, state, dt):
     state._rotorspeeds += dw
     state._rotorspeeds = np.maximum(state._rotorspeeds, 0.0)
     
-    acceleration =s linear_dynamics(params, state)
+    acceleration = linear_dynamics(params, state)
     ang_momentum = angular_momentum_body_frame(params, state)
     angular_acc = ang_momentum / params.frame_inertia
 
